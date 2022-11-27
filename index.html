@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="styles.css" />
     <title>FakeOS</title>
 
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="desktop">
       <div class="desktop__top-bar">
-        <div class="top-bar__content top-bar__content--name">User Name</div>
-        <div class="top-bar__content top-bar__content--time">4:20 pm</div>
+        <div id="menu" class="top-bar__content top-bar__content--menu">∞</div>
+        <div id="clock" class="top-bar__content top-bar__content--time">
+          4:20:45 pm
+        </div>
       </div>
 
       <div class="desktop__content">
-        <div class="content__app">App X</div>
-        <div class="content__app">App Y</div>
-        <div class="content__app">App Z</div>
+        <div id="appX" class="content__app">App X</div>
+        <div id="appY" class="content__app">App Y</div>
+        <div id="appZ" class="content__app">App Z</div>
       </div>
 
       <div class="desktop__bottom-dock">

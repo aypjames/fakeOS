@@ -17,6 +17,11 @@
 
     .top-bar__content {
       padding: 5px 10px;
+
+      &--menu {
+        font-size: 22px;
+        font-weight: bold;
+      }
     }
   }
 
@@ -39,6 +44,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &:hover {
+        cursor: default;
+        user-select: none;
+      }
     }
   }
 
@@ -75,6 +85,8 @@
         &:hover {
           margin-bottom: 5px;
           transition: ease all 0.2s;
+          cursor: default;
+          user-select: none;
         }
       }
     }
