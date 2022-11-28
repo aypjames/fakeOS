@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  margin-top: 5px;
+  background: #126bef;
+  padding: 5px;
+  color: white;
+  border: 1px solid rgb(32, 32, 32);
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #3b87fa;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: grey;
+  cursor: pointer;
+}
+
+input {
+  background: rgb(42, 42, 42);
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 5px;
+  color: rgb(230, 230, 230);
+}
+
+.desktop {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://wallpapershome.com/images/pages/pic_h/11473.jpg");
+  background-size: cover;
+}
+.desktop__top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.03);
+  color: white;
+}
+.desktop__top-bar .top-bar__content {
+  padding: 5px 10px;
+}
+.desktop__top-bar .top-bar__content--menu {
+  font-size: 22px;
+  font-weight: bold;
+}
+.desktop__top-bar .top-bar__content--menu:hover {
+  cursor: default;
+}
+.desktop__top-bar .top-bar__content--time {
+  font-size: 14px;
+}
+.desktop__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.desktop__content .menu-card {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 5px;
+  top: 35px;
+}
+.desktop__content .menu-card__items {
+  background-color: rgb(32, 32, 32);
+  color: white;
+}
+.desktop__content .menu-card__items .menu-item {
+  padding: 5px;
+}
+.desktop__content .menu-card__items .menu-item:hover {
+  background-color: #126bef;
+}
+.desktop__content .app-window {
+  flex-direction: column;
+  z-index: 1;
+  width: 40%;
+  height: 400px;
+  overflow: auto;
+  background-color: rgb(32, 32, 32);
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+}
+.desktop__content .app-window--Notes-App {
+  display: none;
+}
+.desktop__content .app-window--Sys-Pref {
+  display: none;
+}
+.desktop__content .app-window--Gallery-App {
+  display: none;
+}
+.desktop__content .app-window .galleryActions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.desktop__content .app-window .gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+.desktop__content .app-window .close:hover {
+  color: rgb(249, 69, 69);
+  cursor: default;
+}
+.desktop__content .app-window__header {
+  display: flex;
+  justify-content: space-between;
+}
+.desktop__content .app-window__content {
+  margin-top: 10px;
+}
+.desktop__content .app-window__content--Gallery-App > img {
+  width: 100%;
+  height: 300px;
+}
+.desktop__content .app-window__content--Notes-App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 93%;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__Stored-notes {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 32%;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__Stored-notes .individual-note {
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(42, 42, 42);
+  padding: 10px;
+  border-radius: 5px;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__Stored-notes .individual-note__para {
+  font-size: small;
+  color: rgb(191, 191, 191);
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__Stored-notes .individual-note__view-btn {
+  border: 1px solid white;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 10px;
+  border-radius: 5px;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__Stored-notes .individual-note__view-btn:hover {
+  background-color: rgba(255, 255, 255, 0.384);
+  cursor: pointer;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__New-note {
+  display: flex;
+  flex-direction: column;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__New-note input {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid rgb(32, 32, 32);
+  border-bottom: 0px;
+  font-size: large;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__New-note textarea {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid rgb(32, 32, 32);
+  border-bottom: 0px;
+}
+.desktop__content .app-window__content--Notes-App .Notes-app__New-note button {
+  margin-top: 5px;
+}
+.desktop__bottom-dock {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.desktop__bottom-dock .bottom-dock__content {
+  width: 20%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 5px;
+}
+.desktop__bottom-dock .bottom-dock__content .dock__app {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease all 0.2s;
+}
+.desktop__bottom-dock .bottom-dock__content .dock__app:hover {
+  margin-bottom: 5px;
+  transition: ease all 0.2s;
+  cursor: default;
+  user-select: none;
+}
