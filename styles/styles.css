@@ -66,6 +66,8 @@ input {
   z-index: 1; /* Sit on top */
   left: 5px;
   top: 35px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
 .desktop__content .menu-card__items {
   background-color: rgb(32, 32, 32);
@@ -73,9 +75,11 @@ input {
 }
 .desktop__content .menu-card__items .menu-item {
   padding: 5px;
+  font-size: small;
 }
 .desktop__content .menu-card__items .menu-item:hover {
   background-color: #126bef;
+  cursor: default;
 }
 .desktop__content .app-window {
   flex-direction: column;
@@ -202,11 +206,21 @@ input {
 .desktop__bottom-dock .bottom-dock__content .dock__app {
   width: 50px;
   height: 50px;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: ease all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.desktop__bottom-dock .bottom-dock__content .dock__app__icon {
+  font-size: 40px;
+}
+.desktop__bottom-dock .bottom-dock__content .dock__app__name {
+  color: white;
+  font-size: small;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .desktop__bottom-dock .bottom-dock__content .dock__app:hover {
   margin-bottom: 5px;

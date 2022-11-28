@@ -4,31 +4,163 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/styles-lockscreen.css" />
     <title>FakeOS</title>
 
-    <script src="./script.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/clock.js" defer></script>
+    <script src="./scripts/lockScreen.js" defer></script>
+    <script src="./scripts/notesApp.js" defer></script>
+    <script src="./scripts/sysPref.js" defer></script>
+    <script src="./scripts/galleryApp.js" defer></script>
   </head>
   <body>
-    <div class="desktop">
-      <div class="desktop__top-bar">
-        <div id="menu" class="top-bar__content top-bar__content--menu">∞</div>
-        <div id="clock" class="top-bar__content top-bar__content--time">
-          4:20:45 pm
+    <div class="desktop" id="desktop">
+      <div id="lockScreen" class="lock-screen">
+        <div class="lock-screen__content">
+          <h1 id="userGreeting">Hello, Bob</h1>
+          <input type="password" id="lockScreenPass" />
+          <div id="lockScreenHint"></div>
         </div>
       </div>
 
-      <div class="desktop__content">
-        <div id="appX" class="content__app">App X</div>
+      <div class="desktop__top-bar">
+        <div id="deviceMenu" class="top-bar__content top-bar__content--menu">
+          ∞
+        </div>
+        <div id="clock" class="top-bar__content top-bar__content--time"></div>
+      </div>
+
+      <div class="desktop__content" id="desktopContent">
+        <div class="menu-card" id="menuCard">
+          <div class="menu-card__items">
+            <div class="menu-item" id="menuSysPref">⚙️ System Preferences</div>
+            <div class="menu-item" id="menuLockScreen">🔒 Lock Screen</div>
+          </div>
+        </div>
+
+        <!-- NOTES APP START -->
+        <div class="app-window app-window--Notes-App" id="notesAppWindow">
+          <div class="app-window__header">
+            <h3>Notes</h3>
+            <h3 class="close" id="notesAppClose">&times;</h3>
+          </div>
+          <div class="app-window__content app-window__content--Notes-App">
+            <div class="Notes-app__Stored-notes" id="displayNotes">
+              <div class="individual-note">
+                <h5 class="individual-note__heading">New Note</h5>
+                <p class="individual-note__para">Hello</p>
+              </div>
+            </div>
+
+            <div class="Notes-app__New-note">
+              <input type="text" placeholder="Note Heading" id="noteHeading" />
+              <textarea
+                name=""
+                id="noteContent"
+                cols="30"
+                rows="10"
+                placeholder="Notes"
+                value="Notes"
+              ></textarea>
+              <button id="noteSaveBtn">Save</button>
+            </div>
+          </div>
+        </div>
+        <!-- NOTES APP END -->
+
+        <!-- SYSTEM PREFERENCES START -->
+        <div class="app-window app-window--Sys-Pref" id="sysPrefWindow">
+          <div class="app-window__header">
+            <h3>System Preferences</h3>
+            <h3 class="close" id="sysPrefClose">&times;</h3>
+          </div>
+          <div class="app-window__content app-window__content--Sys-Pref">
+            <div>
+              <h5>System Info</h5>
+              <p>Infinity OS</p>
+            </div>
+            <br />
+            <div>
+              <h5>Your Details</h5>
+              <input type="text" placeholder="Name" value="Bob" id="userName" />
+              <button id="nameSaveBtn">Update Name</button>
+            </div>
+            <br />
+            <!-- <div> -->
+            <!-- <h6>Clock</h6>
+              <input type="checkbox" id="showIn24" />
+              <label for="showSeconds">24-Hour-Format</label>
+
+              <input type="checkbox" id="showSeconds" />
+              <label for="showSeconds">Show Seconds</label>
+            </div> -->
+            <div>
+              <br />
+              <h5>Device Prefences</h5>
+              <br />
+              <h6>Desktop Wallpaper</h6>
+              <input
+                type="text"
+                placeholder="URL"
+                value="https://wallpapershome.com/images/pages/pic_h/11473.jpg"
+                id="wallpaperURL"
+              />
+              <button id="wallpaperSaveBtn">Update Wallpaper</button>
+            </div>
+            <br />
+          </div>
+        </div>
+        <!-- SYSTEM PREFERENCES END -->
+
+        <!-- GALLERY APP START -->
+        <div class="app-window app-window--Gallery-App" id="galleryWindow">
+          <div class="app-window__header">
+            <h3>Gallery</h3>
+            <h3 class="close" id="galleryClose">&times;</h3>
+          </div>
+          <div class="app-window__content app-window__content--Gallery-App">
+            <img alt="" id="imgCarousel" class="img-carousel" />
+          </div>
+          <div class="galleryActions">
+            <div class="gallery-inputs">
+              <input
+                type="text"
+                placeholder="URL"
+                value=""
+                id="galleryImgUrl"
+              />
+              <button id="addToGalleryBtn">Add Image</button>
+              <!-- <button id="removeFromGalleryBtn">Remove Image</button> -->
+            </div>
+            <div class="gallery-controls">
+              <button id="imgPrev" disabled>Prev</button>
+              <button id="imgNext">Next</button>
+            </div>
+          </div>
+        </div>
+        <!-- GALLERY APP END -->
+
+        <!-- <div id="appX" class="content__app">Note.txt</div>
         <div id="appY" class="content__app">App Y</div>
-        <div id="appZ" class="content__app">App Z</div>
+        <div id="appZ" class="content__app">App Z</div> -->
       </div>
 
       <div class="desktop__bottom-dock">
         <div class="bottom-dock__content">
-          <div class="dock__app">X</div>
-          <div class="dock__app">Y</div>
-          <div class="dock__app">Z</div>
+          <div class="dock__app" id="sysPref">
+            <p class="dock__app__icon">⚙️</p>
+            <p class="dock__app__name">System</p>
+          </div>
+          <div class="dock__app" id="notesApp">
+            <p class="dock__app__icon">🗒️</p>
+            <p class="dock__app__name">Notes</p>
+          </div>
+          <div class="dock__app" id="galleryApp">
+            <p class="dock__app__icon">🎞️</p>
+            <p class="dock__app__name">Gallery</p>
+          </div>
         </div>
       </div>
     </div>
