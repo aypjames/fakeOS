@@ -85,7 +85,7 @@ input {
   flex-direction: column;
   z-index: 1;
   width: 40%;
-  height: 400px;
+  height: 90%;
   overflow: auto;
   background-color: rgb(32, 32, 32);
   margin: 5% auto;
